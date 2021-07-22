@@ -7,7 +7,7 @@ def abrir_pagina():
 
 def abrir_whats():
     web.get('https://web.whatsapp.com/')
-    sleep(20)
+    sleep(12)
 
 def pesquisa_nome(nome):
     web.find_element_by_xpath('//*[@id="side"]/div[1]/div/label/div/div[2]').send_keys(nome)
@@ -19,13 +19,12 @@ def mandar_msg(msg):
 
 
 web = webdriver.Chrome()
-#pegando os valores
 
 abrir_pagina()
     
 web.find_element_by_xpath('/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys('Dólar')
 web.find_element_by_xpath('/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys(Keys.ENTER)
-dolar = web.find_element_by_xpath('<span class="DFlfde SwHCTb" data-precision="2" data-value="5.2002">5,20</span>').get_attribute('data-value')
+dolar = web.find_element_by_xpath('//*[@id="knowledge-currency__updatable-data-column"]/div[1]/div[2]/span[1]').get_attribute('data-value')
 print(dolar)
 
 abrir_pagina()
@@ -34,3 +33,10 @@ web.find_element_by_xpath('/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/di
 web.find_element_by_xpath('/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys(Keys.ENTER)
 euro = web.find_element_by_xpath('//*[@id="knowledge-currency__updatable-data-column"]/div[1]/div[2]/span[1]').get_attribute('data-value')
 print(euro)
+
+nomes = ['Nel', 'Eu']
+mensagem = f'oiie, tudo bom? o valor do dolar é de RS{dolar} e o de euro é de RS{euro}'
+abrir_whats()
+for nome in nomes:
+    pesquisa_nome(nome)
+    mandar_msg(mensagem)
