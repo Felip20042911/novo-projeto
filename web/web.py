@@ -40,3 +40,4 @@ abrir_whats()
 for nome in nomes:
     pesquisa_nome(nome)
     mandar_msg(mensagem)
+    
