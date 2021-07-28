@@ -1,72 +1,72 @@
-import pyautogui as py
+import pyautogui as pyGUI
 import pyperclip
 from time import sleep
 
-py.PAUSE = 0.5
+pyGUI.PAUSE = 0.5
 #abre o chrome
-py.press('win')
-py.write('chrome')
-py.press('enter')
+pyGUI.press('win')
+pyGUI.write('chrome')
+pyGUI.press('enter')
 
 #entra no NSA
 sleep(3.5)
 pyperclip.copy('https://nsa.cps.sp.gov.br')
-py.hotkey('ctrl', 'v')
-py.press('enter')
+pyGUI.hotkey('ctrl', 'v')
+pyGUI.press('enter')
 
 
 #loga no meu NSA
 sleep(3.7)
-py.moveTo(x=803, y=357)
-py.click()
-py.write('010')
+pyGUI.moveTo(x=803, y=357)
+pyGUI.click()
+pyGUI.write('010')
 
-py.moveTo(x=659, y=376)
-py.click()
-py.write('200801')
+pyGUI.moveTo(x=659, y=376)
+pyGUI.click()
+pyGUI.write('200801')
 
-py.moveTo(x=680, y=395)
-py.click()
-py.write('Felip2911')
+pyGUI.moveTo(x=680, y=395)
+pyGUI.click()
+pyGUI.write('Felip2911')
 
 #faz o reCaptcha
-py.moveTo(x=606, y=437)
-py.click()
+pyGUI.moveTo(x=606, y=437)
+pyGUI.click()
 sleep(3)
-py.moveTo(x=778, y=481)
-py.click()
+pyGUI.moveTo(x=778, y=481)
+pyGUI.click()
 
 #entra no boletin
 sleep(4)
-py.moveTo(x=670, y=449)
-py.click()
+pyGUI.moveTo(x=670, y=449)
+pyGUI.click()
 sleep(2)
-py.moveTo(x=458, y=223)
-py.click()
+pyGUI.moveTo(x=458, y=223)
+pyGUI.click()
 
 #da um print
 
 sleep(3)
-py.hotkey('win', 'shift', 's')
+pyGUI.hotkey('win', 'shift', 's')
 
-py.moveTo(x=371, y=341)
-py.mouseDown()
-py.moveTo(x=1135, y=700)
-py.mouseUp()
+pyGUI.moveTo(x=371, y=341)
+pyGUI.mouseDown()
+pyGUI.moveTo(x=1135, y=700)
+pyGUI.mouseUp()
 
 #salvar o print
 sleep(2)
-py.click()
+pyGUI.click()
 sleep(2)
-py.moveTo(x=903, y=82)
-py.click()
-py.moveTo(x=1027, y=536)
-py.click()
+pyGUI.moveTo(x=903, y=82)
+pyGUI.click()
+pyGUI.moveTo(x=1027, y=536)
+pyGUI.click()
 
 #fechando tudo
 sleep(3)
-py.moveTo(x=1012, y=47)
-py.click()
+pyGUI.moveTo(x=1012, y=47)
+pyGUI.click()
 sleep(2)
-py.moveTo(x=1360, y=13)
-py.click()
+pyGUI.moveTo(x=1360, y=13)
+pyGUI.click()

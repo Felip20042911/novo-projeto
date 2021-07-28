@@ -18,7 +18,7 @@ def mandar_msg(msg):
     web.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div/div[1]/div/div[2]').send_keys(Keys.ENTER)
 
 
-web = webdriver.Chrome()
+web = webdriver.Chrome(executable_path=r'C:\Users\FELIPE\anaconda3\chromedriver.exe')
 
 abrir_pagina()
     
@@ -34,10 +34,12 @@ web.find_element_by_xpath('/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/di
 euro = web.find_element_by_xpath('//*[@id="knowledge-currency__updatable-data-column"]/div[1]/div[2]/span[1]').get_attribute('data-value')
 print(euro)
 
-nomes = ['Nel', 'Eu']
+nomes = ['Eu', 'Valdirzinho']
 mensagem = f'oiie, tudo bom? o valor do dolar é de RS{dolar} e o de euro é de RS{euro}'
 abrir_whats()
 for nome in nomes:
     pesquisa_nome(nome)
     mandar_msg(mensagem)
+
+web.quit()
     
